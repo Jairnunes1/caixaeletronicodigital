@@ -1,15 +1,5 @@
-textarea:focus, input:focus, select:focus {
-   box-shadow: 0 0 0 0;
-   border: 0 none;
-   outline: 0;
-} 
-body {
-   background-color: #1A3BAC;
-   font-family: sans-serif;
-   margin: 0 auto;
-   height: 100vh;
-   line-height: 1.5;
-}
+@import url("/caixaeletronicodigital/digital-atm/frontend/styles/global.css");
+
 .content{
    display: flex;
    flex-direction: column;
