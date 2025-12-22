@@ -1,0 +1,75 @@
+textarea:focus, input:focus, select:focus {
+   box-shadow: 0 0 0 0;
+   border: 0 none;
+   outline: 0;
+} 
+body {
+   background-color: #1A3BAC;
+   font-family: sans-serif;
+   margin: 0 auto;
+   height: 100vh;
+   line-height: 1.5;
+}
+.content{
+   display: flex;
+   flex-direction: column;
+   background-color: #FFFFFF;
+   border-radius: 15px;
+   text-align: center;
+   /* justify-content: center; */
+   align-items: center;
+}
+.circle{
+   width: 100px; 
+   height: 100px; 
+   background-color: #FFF; 
+   border-radius: 50%; 
+   display: flex; 
+   justify-content: center;
+   align-items: center; 
+   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra opcional */
+}
+.icon-logo {
+   font-size: 48px; /* Tamanho do ícone */
+   color: #000; /* Cor do ícone */
+}
+
+/* .icon-logo{
+   background-color: #1A3BAC;
+   color: #E3E3E3;
+   width: 70px;
+   height: 70px;
+   margin: 20px auto 0 auto;
+   border-radius: 50%;
+} */
+.form-content{
+   display: grid;
+   gap: 5px;
+   text-align: start;
+   font-size: 14px;
+   font-weight: 550; 
+   margin-top: 20px;
+
+}
+.form-content input{
+   background-color: #E3E3E3;
+   padding: 10px;
+   border-radius: 5px;
+   border: none;
+   width: 100%; 
+   max-width: 300px;
+}
+
+.button{
+   background-color: #030213;
+   color: white;
+   padding: 10px;
+   border: none;
+   border-radius: 5px;
+   font-size: 12px;
+   font-weight: 700;
+   cursor: pointer;
+}
+.button:hover{
+   background-color: #3f3f3f;
+}
