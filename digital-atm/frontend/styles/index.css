@@ -6,48 +6,49 @@
    background-color: #FFFFFF;
    border-radius: 15px;
    text-align: center;
-   /* justify-content: center; */
+}
+.header-form{
+   display: flex;
+   flex-direction: column;
    align-items: center;
+   /* margin-bottom: 20px; */
+   padding: 1.5rem 1.5rem 0 1.5rem;
+
 }
 .circle{
-   width: 100px; 
-   height: 100px; 
-   background-color: #FFF; 
+   width: 70px; 
+   height: 70px; 
+   background-color: oklch(54.6% 0.245 262.881); 
    border-radius: 50%; 
    display: flex; 
    justify-content: center;
    align-items: center; 
-   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra opcional */
+   /* box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); Adiciona uma sombra opcional */
 }
 .icon-logo {
-   font-size: 48px; /* Tamanho do ícone */
-   color: #000; /* Cor do ícone */
+   font-size: 120px; /* Tamanho do ícone */
+   color: #FFF; /* Cor do ícone */
 }
-
-/* .icon-logo{
-   background-color: #1A3BAC;
-   color: #E3E3E3;
-   width: 70px;
-   height: 70px;
-   margin: 20px auto 0 auto;
-   border-radius: 50%;
-} */
+.header-info{
+   font-size: 16px;
+   color: #555555;
+   margin-top: 10px;
+}
 .form-content{
+   box-sizing: border-box;
    display: grid;
-   gap: 5px;
+   width: 100%;
    text-align: start;
    font-size: 14px;
-   font-weight: 550; 
-   margin-top: 20px;
-
+   font-weight: 550;
+   padding: 0 24px 24px 24px;
 }
 .form-content input{
-   background-color: #E3E3E3;
+   background-color: #f3f3f3;
    padding: 10px;
    border-radius: 5px;
    border: none;
-   width: 100%; 
-   max-width: 300px;
+   max-width: 100%;
 }
 
 .button{
