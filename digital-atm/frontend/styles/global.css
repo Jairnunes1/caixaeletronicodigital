@@ -1,8 +1,11 @@
-textarea:focus, input:focus, select:focus {
-   box-shadow: 0 0 0 0;
-   border: 0 none;
-   outline: 0;
-} 
+h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+   margin: 0;
+   padding: 0;
+}
+
+ul {
+   list-style-type: none;
+}
 body {
    background-color: oklch(28.2% 0.091 267.935);
    font-family: sans-serif;
@@ -13,4 +16,7 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
+}
+* {
+   box-sizing: border-box;
 }
