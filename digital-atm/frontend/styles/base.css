@@ -7,7 +7,8 @@ ul {
    list-style-type: none;
 }
 body {
-   background-color: oklch(28.2% 0.091 267.935);
+   /* background-color: oklch(28.2% 0.091 267.935); */
+   background-color: #372cc9;
    font-family: sans-serif;
    margin: 0 auto;
    height: 100vh;
