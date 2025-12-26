@@ -81,6 +81,15 @@
 .button:hover{
    background-color: #3f3f3f;
 }
+.button.sign-up{
+   color: #030213;
+   background-color: #ffffff;
+   border: #cacaca 1px solid;
+}
+.button.sign-up:hover{
+   background-color: #eeeeee;
+
+}
 
 .demo-users {
    background-color: #f8f9ff;
