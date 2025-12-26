@@ -6,6 +6,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li {
 ul {
    list-style-type: none;
 }
+a{
+   text-decoration: none;
+   color: inherit;
+}
 body {
    /* background-color: oklch(28.2% 0.091 267.935); */
    background-color: #372cc9;
