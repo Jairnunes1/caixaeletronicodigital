@@ -1,0 +1,21 @@
+body{
+    background-color: oklch(44.8% 0.119 151.328);
+}
+.circle {
+background-color: oklch(62.7% 0.194 149.214);
+}
+.button.secundary {
+background-color: oklch(62.7% 0.194 149.214);
+color: #fff;
+}
+.button.secundary:hover {
+    background-color: oklch(52.7% 0.194 149.214);
+}
+.register.button.sign-up{
+    background-color: #fff;
+    color: #030213;
+    border: 1px solid #cacaca;
+}
+.register.button.sign-up:hover {
+    background-color: #eeeeee;
+}
