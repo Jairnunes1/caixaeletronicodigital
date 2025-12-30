@@ -51,13 +51,25 @@ font-weight: 550;
 
 .form-content input {
 background-color: #f3f3f3;
-padding: 8px;
+padding: 8px 8px 8px 36px;
 border-radius: 5px;
 border: 1px solid transparent;
 outline: none;
 font-size: 14px;
 }
-
+.content-input{
+    display: grid;
+    position: relative;
+    align-items: center;
+}
+.icon-input{
+    position: absolute;
+    color: #99A1AF ;
+    left: 8px;
+    width: 0.25rem * 5;
+    height: 0.25rem * 5;
+    font-variation-settings: "wght" 250;
+}
 
 .form-content input:focus {
 border-color: #858585;
@@ -85,4 +97,9 @@ a .button{
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+.button.primary, .button.secundary {
+   border: 1px solid transparent;
+   box-shadow: none; 
 }

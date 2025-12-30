@@ -10,7 +10,7 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=credit_card" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
    <title>Caixa Eletrônico Digital</title>
 </head>
 
@@ -20,7 +20,7 @@
       <div class="header-form">
          <div class="circle">
             <span class="material-symbols-outlined icon-logo">
-            credit_card
+               credit_card
             </span>
          </div>
          <h1>Caixa Eletrônico</h1>
@@ -28,11 +28,19 @@
       </div>
       <form class="form-content" action="">
          <label for="text">Usuário</label>
-         <input type="text" placeholder="Digite seu usuário" required autofocus />
-         <!-- <br> -->
+         <div class="content-input">
+            <span class="material-symbols-outlined icon-input">
+               person
+            </span>
+            <input type="text" placeholder="Digite o seu usuário" required autofocus />
+         </div>
          <label for="password">Senha</label>
-         <input type="password" placeholder="Digite sua senha" required />
-         <!-- <br> -->
+         <div class="content-input">
+            <span class="material-symbols-outlined icon-input">
+               lock
+            </span>
+            <input type="password" placeholder="Digite a sua senha" required />
+         </div>
          <button type="submit" class="button primary">Entrar</button>
          <a href="register.html" class="button sign-up">Cadastrar-se</a>
          <aside class="demo-users">

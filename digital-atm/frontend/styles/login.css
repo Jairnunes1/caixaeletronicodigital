@@ -1,8 +1,6 @@
 .login .circle {
 background-color: oklch(54.6% 0.245 262.881);
 }
-
-
 .login .button {
 background-color: #030213;
 color: #fff;
@@ -10,22 +8,17 @@ color: #fff;
 .primary {
    margin-top: 10px;
 }
-
-
 .login .button:hover {
 background-color: #3f3f3f;
 }
-
 .login .button.sign-up {   
 background-color: #fff;
 color: #030213;
 border: 1px solid #cacaca;
 }
-
 .login .button.sign-up:hover {
 background-color: #eeeeee;
 }
-
 .demo-users {
 background-color: #f8f9ff;
 padding: 16px;
