@@ -1,0 +1,11 @@
+:root{
+    --text-color1: #fff;
+    --text-color2: #000;
+    --bg-color1: #e9ebef;
+}
+body{
+    background: linear-gradient(to bottom right, oklch(37.9% 0.146 265.522) 0%, oklch(42.4% 0.199 265.638) 50%, oklch(28.2% 0.091 267.935) 100%);
+}
+.content {
+    background: transparent;
+}

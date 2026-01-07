@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../styles/base.css">
+   <link rel="stylesheet" href="../styles/auth.css">
+   <link rel="stylesheet" href="../../frontend/styles/login.css">
+   <link rel="stylesheet" href="./style/components.css">
+   <link rel="stylesheet" href="./style/layout.css">
+<link rel="stylesheet" href="./style/base.css">
+   <link rel="stylesheet" href="./style/components.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+   <title>Área do Cliente</title>
+</head>
+
+<body>
+
+   <main class="content login">
+        <header class="header-db">
+            <div class="left">
+                <div class="login circle">
+                    <span class="material-symbols-outlined icon-logo">
+                        credit_card
+                    </span>
+                </div>
+                <div>
+                    <h1>Bem-vindo, usuario1</h1>
+                    <p>Caixa Eletrônico Digital</p>
+                    
+                </div>
+            </div>
+            <div class="right">
+
+                <button class="button exit" aria-label="Sair">                <span class="material-symbols-outlined icon-user">
+                    logout</span>Sair</button>
+            </div>
+        </header>
+        <section class="balance">
+            <h4 class="label">Saldo Disponível</h4>
+            <p class="balance-value"><strong>R$ 0.00</strong></p>
+        </section>
+        <nav class="dashboard-actions">
+            <button data-target="withdraw">
+                <span class="material-symbols-outlined">
+                    arrow_circle_down
+                </span>Sacar
+            </button>
+            <button data-target="deposit">
+                <span class="material-symbols-outlined">
+                    arrow_circle_up
+                </span>Depositar
+            </button>
+            <button data-target="history">
+                <span class="material-symbols-outlined">
+                    history
+                </span>Histórico
+            </button>
+        </nav>
+        <section id="withdraw" class="panel">
+
+    <h2>Saque</h2>
+
+    <p class="withdraw-description">
+        Digite o valor que deseja sacar ou selecione um valor rápido
+    </p>
+
+    <form class="withdraw-form">
+
+        <label for="withdraw-value">Valor do saque</label>
+        <input
+            type="number"
+            id="withdraw-value"
+            name="withdraw-value"
+            min="1"
+            step="10"
+            placeholder="R$0.00"
+        />
+        <button type="submit">Confirmar saque</button>
+        
+        <fieldset class="quick-values">
+            <legend>Valores rápidos</legend>
+
+            <button type="button" data-value="20">R$ 20</button>
+            <button type="button" data-value="50">R$ 50</button>
+            <button type="button" data-value="100">R$ 100</button>
+            <button type="button" data-value="200">R$ 200</button>
+        </fieldset>
+
+
+    </form>
+</section>
+
+            </div>
+        </section>
+        <section id="deposit" class="panel">
+        </section>
+        <section id="history" class="panel">
+        </section>
+   </main>
+
+</body>
+
+</html>

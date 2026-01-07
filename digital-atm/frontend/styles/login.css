@@ -1,0 +1,42 @@
+.login .circle {
+background-color: oklch(54.6% 0.245 262.881);
+}
+.login .button {
+background-color: #030213;
+color: #fff;
+}
+.primary {
+   margin-top: 10px;
+}
+.login .button:hover {
+background-color: #3f3f3f;
+}
+.login .button.sign-up {   
+background-color: #fff;
+color: #030213;
+border: 1px solid #cacaca;
+}
+.login .button.sign-up:hover {
+background-color: #eeeeee;
+}
+.demo-users {
+background-color: #f8f9ff;
+padding: 16px;
+margin-top: 16px;
+border-radius: 12px;
+text-align: start;
+border-radius: 12px;
+}
+.demo-users h2 {
+font-size: 14px;
+font-weight: bold;
+color: #555555;
+}
+.demo-users li {
+   font-size: 14px;
+   font-weight: 500;
+   color: #555555;
+}
+.demo-users li:first-child {
+   margin-bottom: 4px;
+}

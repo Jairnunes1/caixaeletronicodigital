@@ -1,0 +1,44 @@
+
+.header-db {
+    display: flex;
+    /* width: 800px; */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: var(--text-color1);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+.right {
+    display: flex;
+    align-items: center;
+}
+.button.exit {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color1);
+    color: var(--text-color2);
+}
+.balance{
+    color: var(--text-color1);
+    background: oklch(54.6% 0.245 262.881);
+    display: grid;
+    justify-content: start;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    border-radius: 15px;
+    gap: 6px;
+    text-align: start;
+    /* align-content: end; */
+}
+.label{
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+.balance-value{
+    font-size: 2rem;
+}

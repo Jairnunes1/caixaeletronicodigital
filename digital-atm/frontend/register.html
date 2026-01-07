@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles/base.css">
+   <link rel="stylesheet" href="styles/auth.css">
+   <link rel="stylesheet" href="styles/register.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+   <title>Caixa Eletrônico Digital - SignUP</title>
+</head>
+
+<body>
+
+   <main class="content register">
+      <div class="header-form">
+         <div class="circle">
+            <span class="material-symbols-outlined icon-logo">
+               credit_card
+            </span>
+         </div>
+         <h1>Caixa Eletrônico</h1>
+         <p class="header-info">Crie sua conta para acessar sua conta</p>
+      </div>
+      <form class="form-content" action="">
+         <label for="text">Usuário</label>
+         <div class="content-input">
+            <span class="material-symbols-outlined icon-input">person</span>
+            <input type="text" placeholder="Escolha um nome de usuário" required autofocus />
+         </div>
+         <!-- <br> -->
+         <label for="password">Senha</label>
+         <div class="content-input">
+            <span class="material-symbols-outlined icon-input">lock</span>
+            <input type="password" placeholder="Crie uma senha (mín. 6 caracters)" required />
+         </div>
+         <!-- <br> -->
+         <label for="password">Confirmar Senha</label>
+         <div class="content-input">
+            <span class="material-symbols-outlined icon-input">lock</span>
+            <input type="password" placeholder="Digite a senha novamente" required />
+         </div>
+         <!-- <br> -->
+         <label for="number">Saldo Inicial (R$)</label>
+         <div class="content-input">
+            <span class="material-symbols-outlined icon-input">attach_money</span>
+            <input type="number" placeholder="0.00" required />
+         </div>
+         <!-- Criar mascara para number R$1.000,00-->
+         <button type="submit" class="button secundary">Cadastrar-se</button>
+         <a href="../../index.html" class="register button sign-up">Voltar para Login</a>
+      </form>
+   </main>
+
+</body>
+
+</html>
