@@ -1,0 +1,26 @@
+.header-db{
+    color: var(--text-color1);
+}
+.balance{
+    color: var(--text-color1);
+    background: oklch(54.6% 0.245 262.881);
+    border-radius: 15px;
+}
+.button.exit {
+    background-color: var(--bg-color1);
+    color: var(--text-color2);
+}
+.label{
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+.balance-value{
+    font-size: 2rem;
+}
+.dashboard-actions button{
+    cursor: pointer;
+    background: #fff;
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+}

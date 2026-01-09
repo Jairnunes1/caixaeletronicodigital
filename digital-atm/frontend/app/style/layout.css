@@ -5,7 +5,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    color: var(--text-color1);
 }
 
 .left {
@@ -21,24 +20,26 @@
 .button.exit {
     display: flex;
     align-items: center;
-    background-color: var(--bg-color1);
-    color: var(--text-color2);
 }
 .balance{
-    color: var(--text-color1);
-    background: oklch(54.6% 0.245 262.881);
     display: grid;
     justify-content: start;
     padding: 1.5rem 1.5rem 0 1.5rem;
-    border-radius: 15px;
     gap: 6px;
     text-align: start;
     /* align-content: end; */
 }
-.label{
-    font-size: 1.2rem;
-    font-weight: 100;
+.dashboard-actions{
+    display: flex;
+    background: color-mix(in oklab, #fff 10%, transparent);
+    border-radius: 14px;
+    padding: 4px;
+    margin-top: 40px;
 }
-.balance-value{
-    font-size: 2rem;
+.dashboard-actions button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
 }
