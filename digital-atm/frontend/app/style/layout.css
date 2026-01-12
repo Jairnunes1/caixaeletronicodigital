@@ -43,3 +43,9 @@
     gap: 5px;
     flex: 1;
 }
+.panel{
+    text-align: start;
+    margin-top: 40px;
+    padding: 24px 24px 0 24px;
+
+}

@@ -19,8 +19,16 @@
 }
 .dashboard-actions button{
     cursor: pointer;
-    background: #fff;
+    background: var;
     border: none;
     border-radius: 14px;
     font-weight: 600;
+}
+.panel{
+    display: none;
+    background: #fff ;
+    border-radius: 14px;
+}
+.active {
+   display: block;
 }
