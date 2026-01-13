@@ -9,6 +9,19 @@
 .button.exit {
     background-color: var(--bg-color1);
     color: var(--text-color2);
+    display: inline-flex;
+    gap: 3px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: none; 
+    border: none;
+}
+.button.exit:hover {
+    background-color: #e2e2e2;
+}
+.interactive-icon{
+
+    font-variation-settings: "wght" 300;
 }
 .label{
     font-size: 1.2rem;
@@ -19,11 +32,17 @@
 }
 .dashboard-actions button{
     cursor: pointer;
-    background: var;
+    background: transparent;
     border: none;
     border-radius: 14px;
     font-weight: 600;
 }
+.dashboard-actions button.nav-active{
+    transition-property: background;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fff;
+}   
 .panel{
     display: none;
     background: #fff ;

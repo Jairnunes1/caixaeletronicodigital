@@ -57,6 +57,7 @@ border: 1px solid transparent;
 outline: none;
 font-size: 14px;
 }
+
 .content-input{
     display: grid;
     position: relative;

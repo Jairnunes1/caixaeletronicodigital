@@ -1,21 +1,32 @@
+body{
+    max-width: 100%;
+    padding: 32px;
+}
+main{
+    width: 1152px;
 
+}
 .header-db {
     display: flex;
-    /* width: 800px; */
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
 .left {
     display: flex;
+    flex-shrink: 0; /* Não vai quebrar layout do Header */
     align-items: center;
+    text-align: start;
     gap: 20px;
+
 
 }
 .right {
     display: flex;
     align-items: center;
+
 }
 .button.exit {
     display: flex;
@@ -49,3 +60,31 @@
     padding: 24px 24px 0 24px;
 
 }
+
+/* @media (max-width: 1152px) {
+    main {
+        width: var(--container-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    body{
+        padding: 16px;
+    }
+    main {
+        width: var(--container-md);
+    }
+    .header-db{
+        gap: 0px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    body{
+        padding: 0px;
+    }
+    main {
+        width: var(--container-sm);
+    }
+} */

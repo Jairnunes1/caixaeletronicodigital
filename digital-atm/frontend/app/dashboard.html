@@ -8,9 +8,9 @@
    <link rel="stylesheet" href="../styles/auth.css">
    <link rel="stylesheet" href="../../frontend/styles/login.css">
    <link rel="stylesheet" href="./style/components.css">
-   <link rel="stylesheet" href="./style/layout.css">
-<link rel="stylesheet" href="./style/base.css">
+   <link rel="stylesheet" href="./style/base.css">
    <link rel="stylesheet" href="./style/components.css">
+   <link rel="stylesheet" href="./style/layout.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -23,11 +23,11 @@
    <main class="content login">
         <header class="header-db">
             <div class="left">
-                <div class="login circle">
-                    <span class="material-symbols-outlined icon-logo">
-                        credit_card
-                    </span>
-                </div>
+            <div class="login circle">
+                <span class="material-symbols-outlined icon-logo">
+                    credit_card
+                </span>
+            </div>
                 <div>
                     <h1>Bem-vindo, usuario1</h1>
                     <p>Caixa Eletrônico Digital</p>
@@ -36,8 +36,12 @@
             </div>
             <div class="right">
 
-                <button class="button exit" aria-label="Sair">                <span class="material-symbols-outlined icon-user">
-                    logout</span>Sair</button>
+                <button class="button exit" aria-label="Sair">                
+                    <span class="material-symbols-outlined interactive-icon">
+                    logout
+                    </span>
+                    Sair
+                </button>
             </div>
         </header>
         <section class="balance">
@@ -45,23 +49,23 @@
             <p class="balance-value"><strong>R$ 0.00</strong></p>
         </section>
         <nav class="dashboard-actions">
-            <button data-target="withdraw">
-                <span class="material-symbols-outlined">
+            <button data-target="withdraw" class="nav-active">
+                <span class="material-symbols-outlined interactive-icon">
                     arrow_circle_down
                 </span>Saque
             </button>
             <button data-target="deposit">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined interactive-icon">
                     arrow_circle_up
                 </span>Depositar
             </button>
             <button data-target="history">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined interactive-icon">
                     history
                 </span>Histórico
             </button>
         </nav>
-        <section id="withdraw" class="panel">
+        <section id="withdraw" class="panel active">
 
     <h2>Realizar Saque</h2>
 
