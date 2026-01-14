@@ -51,3 +51,6 @@
 .active {
    display: block;
 }
+#history p, .transaction-history li {
+    color: var(--text-color3);
+}

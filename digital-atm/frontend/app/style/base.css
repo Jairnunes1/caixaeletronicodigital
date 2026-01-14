@@ -1,6 +1,7 @@
 :root{
     --text-color1: #fff;
     --text-color2: #000;
+    --text-color3: #717182;
     --bg-color1: #e9ebef;
     --container-sm: 448px;
     --container-md: 518px;
@@ -12,6 +13,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     max-width: 100%;
+    margin-inline: auto;
 
 }
 .content {
