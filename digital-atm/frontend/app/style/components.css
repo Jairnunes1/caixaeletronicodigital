@@ -51,6 +51,9 @@
 .active {
    display: block;
 }
-#history p, .transaction-history li {
+#history p, .transaction-history li, .panel p {
     color: var(--text-color3);
+}
+.panel h2, .panel p {
+    font-size: 1rem;
 }

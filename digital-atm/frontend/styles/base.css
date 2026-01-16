@@ -1,3 +1,20 @@
+:root{
+    --text-color1: #fff;
+    --text-color2: #000;
+    --text-color3: #717182;
+    --text-color4: #555555;
+    --bg-color0: #ffffff;
+    --bg-color1: #e9ebef;
+    --bg-color2: #030213;
+    --bg-color3: #3f3f3f;
+    --bg-color4: oklch(62.7% 0.194 149.214);
+    --container-sm: 448px;
+    --container-md: 518px;
+    --container-lg: 712px;
+    --container-6xl: 1152px;
+    --border-btn-radius: 8px;
+}
+
 h1, h2, h3, h4, h5, h6, p, ul, ol, li,strong {
    margin: 0;
    padding: 0;
@@ -24,4 +41,6 @@ body {
 * {
    box-sizing: border-box;
 }
-
+input, button {
+   border-radius: var(--border-btn-radius);
+}
