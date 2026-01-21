@@ -16,7 +16,6 @@ main{
 
 .left {
     display: flex;
-    flex-shrink: 0; /* Não vai quebrar layout do Header */
     align-items: center;
     text-align: start;
     gap: 20px;
@@ -58,7 +57,6 @@ main{
     margin-top: 40px;
     padding: 24px 24px 0 24px;
 }
-/* Withdraw Section */
 
 .panel-description{
     margin-bottom: 24px;
@@ -77,30 +75,27 @@ main{
     margin-top: 16px;
     margin-bottom: 40px;
 }
-.register.button.sign-up{
-    border-radius: var(--border-btn-radius);
-}
-.primary {
-    border-radius: var(--border-btn-radius);
-}
-/* Deposit Section */
-
-
-/* History Section */
-/* .transaction-history{
+/* * Transaction History Styles * */
+/* Inicialmente terá esse estilo, após "ativação do histórico ativar deposit or withdraw" */
+.transaction-history{
     display: grid;
     justify-content: center;
     text-align: center;
     padding: 32px 0;
-} */
-
+}
+.transaction-deposit{
+    display: none;
+}
+.transaction-withdraw{
+    display: none;
+}
 .transaction-info{
     display: flex;
     justify-content: space-between;
     padding: 16px;
     margin-bottom: 16px;
     border: 1px solid #F5F5F5;
-    border-radius: 8px;
+    border-radius: var(--border-btn-radius);
 }
 .transaction-details{
     display: flex;
@@ -111,30 +106,19 @@ main{
     align-items: center;
     gap: 12px;
  }
- .transaction-header span{
+ .transaction-header span.transaction-icon {
     display: flex;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: oklch(62.7% 0.194 149.214);
-    background-color: oklch(96.2% 0.044 156.743);
     width: 40px;
     height: 40px;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
 }
 .transaction-values{
     text-align: end;
 }
 
 
-
-
-
-
-
-
-/* @media (max-width: 1152px) {
+@media (max-width: 1152px) {
     main {
         width: var(--container-lg);
     }
@@ -160,4 +144,12 @@ main{
     main {
         width: var(--container-sm);
     }
-} */
+    .welcome{
+        font-size: 1.2rem;
+    }
+    .button.exit {
+        padding: 6px 8px;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+}

@@ -57,3 +57,26 @@
 .panel h2, .panel p {
     font-size: 1rem;
 }
+.register.button.sign-up{
+    border-radius: var(--border-btn-radius);
+}
+.primary {
+    border-radius: var(--border-btn-radius);
+}
+.transaction-header span.transaction-icon {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: oklch(62.7% 0.194 149.214);
+    background-color: oklch(96.2% 0.044 156.743);
+    border-radius: 50%;
+}
+.transaction-header span.withdraw-icon{
+    color: oklch(62.7% 0.194 25.214);
+    background-color: oklch(96.2% 0.044 26.743);
+}
+.deposit-amount{
+    color: #00a63e !important;
+}
+.withdraw-amount{
+    color: #e64947 !important;
+}

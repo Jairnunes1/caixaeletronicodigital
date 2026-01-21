@@ -29,7 +29,7 @@
                     </span>
                 </div>
                 <div>
-                    <h1>Bem-vindo, usuario1</h1>
+                    <h1 class="welcome">Bem-vindo, usuario1</h1>
                     <p>Caixa Eletrônico Digital</p>
 
                 </div>
@@ -117,8 +117,8 @@
             <h2>Histórico de Transações</h2>
             <p class="panel-description">Ultimas transações realizadas em sua conta</p>
             <ul class="transaction-history">
-                <!-- <li>Nenhuma transação realizada</li> -->
-                <li class="transaction-deposit">
+                <li>Nenhuma transação realizada</li>
+                <li class="transaction-deposit"> <!-- class="transaction-deposit"-->
                     <div class="transaction-info">
                         <div class="transaction-header">
                             <span class="material-symbols-outlined transaction-icon deposit-icon" aria-hidden="true">
@@ -126,24 +126,33 @@
                             </span>
                             <div class="transaction-details">
                                 <p class="transaction-type">Depósito</p>
-                                <p class="transaction-date">15/06/2024 14:30</p>
+                                <p>15/06/2024 14:30</p> <!-- class="transaction-date"-->
                             </div>
                         </div>
                         <div class="transaction-values">
-                            <p class="transaction-amount deposit-amount">+ R$ 150.00</p>
-                            <p class="">Saldo: R$ 1000,00</p>
+                            <p class="deposit-amount">+ R$ 150.00</p>
+                            <p>Saldo: R$ 1000,00</p>
                         </div>
                     </div>
                 </li>
-                <!-- <li class="transaction-withdraw">
-                    <div>
-                        <span class="material-symbols-outlined transaction-icon deposit-icon">
-                            arrow_circle_up
-                        </span>
-                        <p class="transaction-type">Depósito</p>
-                        <p class="transaction-date">15/06/2024 14:30</p>
+                 <li class="transaction-withdraw"> <!-- class="transaction-withdraw"-->
+                    <div class="transaction-info">
+                        <div class="transaction-header">
+                            <span class="material-symbols-outlined transaction-icon withdraw-icon" aria-hidden="true">
+                                arrow_circle_down
+                            </span>
+                            <div class="transaction-details">
+                                <p class="transaction-type">Saque</p>
+                                <p>21/01/2026 16:14</p> <!-- class="transaction-date"-->
+                            </div>
+                        </div>
+                        <div class="transaction-values">
+                            <p class="withdraw-amount">- R$ 100.00</p>
+                            <p>Saldo: R$ 1000,00</p>
+                        </div>
                     </div>
-                </li> -->
+                </li>
+            </ul>
         </section>
     </main>
     <script src="./js/dashboard.js"></script>
