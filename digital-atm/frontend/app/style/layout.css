@@ -60,7 +60,7 @@ main{
 }
 /* Withdraw Section */
 
-.panel p{
+.panel-description{
     margin-bottom: 24px;
 }
 .panel form{
@@ -87,12 +87,52 @@ main{
 
 
 /* History Section */
-.transaction-history{
+/* .transaction-history{
     display: grid;
     justify-content: center;
     text-align: center;
     padding: 32px 0;
+} */
+
+.transaction-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #F5F5F5;
+    border-radius: 8px;
 }
+.transaction-details{
+    display: flex;
+    flex-direction: column;
+}
+.transaction-header{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+ }
+ .transaction-header span{
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: oklch(62.7% 0.194 149.214);
+    background-color: oklch(96.2% 0.044 156.743);
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.transaction-values{
+    text-align: end;
+}
+
+
+
+
+
+
+
 
 /* @media (max-width: 1152px) {
     main {
