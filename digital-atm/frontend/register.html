@@ -31,28 +31,28 @@
          <label for="text">Usuário</label>
          <div class="content-input">
             <span class="material-symbols-outlined icon-input">person</span>
-            <input class="input-style" type="text" placeholder="Escolha um nome de usuário" required autofocus />
+            <input id="user" class="input-style" type="text" placeholder="Escolha um nome de usuário" required autofocus />
          </div>
          <label for="password">Senha</label>
          <div class="content-input">
             <span class="material-symbols-outlined icon-input">lock</span>
-            <input class="input-style" type="password" placeholder="Crie uma senha (mín. 6 caracters)" required />
+            <input id="password" class="input-style" type="password" placeholder="Crie uma senha (mín. 6 caracters)" required />
          </div>
          <label for="password">Confirmar Senha</label>
          <div class="content-input">
             <span class="material-symbols-outlined icon-input">lock</span>
-            <input class="input-style" type="password" placeholder="Digite a senha novamente" required />
+            <input id="confirm-password" class="input-style" type="password" placeholder="Digite a senha novamente" required />
          </div>
          <label for="number">Saldo Inicial (R$)</label>
          <div class="content-input">
             <span class="material-symbols-outlined icon-input">attach_money</span>
-            <input class="input-style" type="number" placeholder="0.00" required />
+            <input id="balance" class="input-style" type="number" placeholder="0.00" required />
          </div>
-         <button type="submit" class="button secundary">Cadastrar-se</button>
+         <button id="enviar" type="submit" class="button secundary">Cadastrar-se</button>
          <a href="../../index.html" class="register button sign-up">Voltar para Login</a>
       </form>
    </main>
-
+ <script src="./script.js"></script>
 </body>
 
 </html>
