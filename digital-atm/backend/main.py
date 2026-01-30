@@ -1,6 +1,8 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from urllib.parse import urlparse, parse_qs
 import json
 import os
+
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), 'users.json')
 
@@ -88,7 +90,25 @@ class Handler(BaseHTTPRequestHandler):
             return self._send_json(200, {"success": True, "balance": users[username]["balance"]})
 
         return self._send_json(404, {"success": False, "message": "Rota não encontrada."})
+    def do_GET(self):
+        parsed = urlparse(self.path)
+        path = parsed.path
+        params = parse_qs(parsed.query)
 
+        if path == "/balance":
+            users = load_users()
+
+            username = params.get("username", [None])[0]
+            if not username:
+                return self._send_json(400, {"success": False, "message": "Faltou username."})
+
+            if username not in users:
+                return self._send_json(404, {"success": False, "message": "Usuário não encontrado."})
+
+            balance = users[username]["balance"]
+            return self._send_json(200, {"success": True, "balance": balance})
+
+        return self._send_json(404, {"success": False, "message": "Rota não encontrada."})
 def run():
     server = HTTPServer(("localhost", 3000), Handler)
     print("Servidor rodando em http://localhost:3000")

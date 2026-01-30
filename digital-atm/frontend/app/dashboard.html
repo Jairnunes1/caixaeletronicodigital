@@ -29,7 +29,7 @@
                     </span>
                 </div>
                 <div>
-                    <h1 class="welcome">Bem-vindo, usuario1</h1>
+                    <h1 class="welcome" id="user-name"></h1>
                     <p>Caixa Eletrônico Digital</p>
 
                 </div>
@@ -46,7 +46,7 @@
         </header>
         <section class="balance">
             <h4 class="label">Saldo Disponível</h4>
-            <p class="balance-value"><strong>R$ 0.00</strong></p>
+            <p id="saldo" class="balance-value"><strong>R$ 0.00</strong></p>
         </section>
         <nav class="dashboard-actions">
             <button data-target="withdraw" class="nav-active">
@@ -76,7 +76,7 @@
             <form class="withdraw-form">
 
                 <label for="withdraw-value">Valor do saque</label>
-                <input class="input-style" type="number" id="withdraw-value" name="withdraw-value" min="1" step="10" placeholder="R$0.00" />
+                <input class="input-style" type="number" id="withdraw-value" name="withdraw-value" min="1" step="10" placeholder="0.00" />
                 <button type="submit" class="button primary">Confirmar saque</button>
 
                 <fieldset class="quick-values">
@@ -148,7 +148,7 @@
                         </div>
                         <div class="transaction-values">
                             <p class="withdraw-amount">- R$ 100.00</p>
-                            <p>Saldo: R$ 1000,00</p>
+                            <p id="saldo">Saldo: R$ 1000,00</p>
                         </div>
                     </div>
                 </li>

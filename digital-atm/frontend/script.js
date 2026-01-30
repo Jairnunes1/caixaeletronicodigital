@@ -25,5 +25,3 @@ document.querySelector("#enviar").addEventListener("click", async () => {
       console.log("Falha no login:", result.message);
   }
 });
-
-console.log("Script carregado");
