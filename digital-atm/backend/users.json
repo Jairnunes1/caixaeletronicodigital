@@ -1,0 +1,10 @@
+{
+    "usuario1": {
+        "password": "senha123",
+        "balance": 1500.00
+    },
+    "usuario2": {
+        "password": "senha456",
+        "balance": 2500.50
+    }
+}
