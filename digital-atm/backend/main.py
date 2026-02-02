@@ -14,6 +14,7 @@ def save_users(users):
     with open(DATA_PATH, 'w') as file:
         json.dump(users, file,ensure_ascii=False, indent=2)
 
+
 class Handler(BaseHTTPRequestHandler):
     def _send_json(self, status_code, data):
         self.send_response(status_code)

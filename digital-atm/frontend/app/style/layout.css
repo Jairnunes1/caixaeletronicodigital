@@ -139,7 +139,7 @@ main{
 
 @media (max-width: 576px) {
     body{
-        padding: 0px;
+        margin: 8px;
     }
     main {
         width: var(--container-sm);

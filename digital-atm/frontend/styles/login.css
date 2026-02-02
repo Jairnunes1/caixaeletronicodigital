@@ -49,3 +49,10 @@
 .demo-users li:first-child {
    margin-bottom: 4px;
 }
+
+@media(max-width: 576px) {
+   body {
+      margin: 8px;
+   }
+   
+}

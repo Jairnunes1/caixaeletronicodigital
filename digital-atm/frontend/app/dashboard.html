@@ -82,10 +82,10 @@
                 <fieldset class="quick-values">
                     <legend>Valores rápidos</legend>
 
-                    <button type="button" data-value="20" class="register button sign-up">R$ 20</button>
-                    <button type="button" data-value="50" class="register button sign-up">R$ 50</button>
-                    <button type="button" data-value="100" class="register button sign-up">R$ 100</button>
-                    <button type="button" data-value="200" class="register button sign-up">R$ 200</button>
+                    <button type="button" data-value="20" data-target="#withdraw-value" class="register button sign-up">R$ 20</button>
+                    <button type="button" data-value="50" data-target="#withdraw-value" class="register button sign-up">R$ 50</button>
+                    <button type="button" data-value="100" data-target="#withdraw-value" class="register button sign-up">R$ 100</button>
+                    <button type="button" data-value="200" data-target="#withdraw-value" class="register button sign-up">R$ 200</button>
                 </fieldset>
 
 
@@ -100,16 +100,16 @@
             <p class="panel-description">Digite o valor que deseja depositar em sua conta</p>
             <form class="deposit-form">
                 <label for="deposit-value">Valor do depósito</label>
-                <input class="input-style" type="number" id="deposit-value" name="deposit-value" min="1" step="10" placeholder="R$0.00" />
+                <input class="input-style" type="number" id="deposit-value" name="deposit-value" min="1" step="10" placeholder="0.00" />
                 <button type="submit" class="button primary">Confirmar depósito</button>
             </form>
             <fieldset class="quick-values">
                 <legend>Valores rápidos</legend>
 
-                <button class="register button sign-up" type="button" data-value="20">R$ 20</button>
-                <button class="register button sign-up" type="button" data-value="50">R$ 50</button>
-                <button class="register button sign-up" type="button" data-value="100">R$ 100</button>
-                <button class="register button sign-up" type="button" data-value="200">R$ 200</button>
+                <button class="register button sign-up" type="button" data-value="20" data-target="#deposit-value">R$ 20</button>
+                <button class="register button sign-up" type="button" data-value="50" data-target="#deposit-value">R$ 50</button>
+                <button class="register button sign-up" type="button" data-value="100" data-target="#deposit-value">R$ 100</button>
+                <button class="register button sign-up" type="button" data-value="200" data-target="#deposit-value">R$ 200</button>
 
             </fieldset>
         </section>
@@ -118,7 +118,7 @@
             <p class="panel-description">Ultimas transações realizadas em sua conta</p>
             <ul class="transaction-history">
                 <li>Nenhuma transação realizada</li>
-                <li class="transaction-deposit"> <!-- class="transaction-deposit"-->
+                <li class="transaction-deposit"> 
                     <div class="transaction-info">
                         <div class="transaction-header">
                             <span class="material-symbols-outlined transaction-icon deposit-icon" aria-hidden="true">
@@ -126,7 +126,7 @@
                             </span>
                             <div class="transaction-details">
                                 <p class="transaction-type">Depósito</p>
-                                <p>15/06/2024 14:30</p> <!-- class="transaction-date"-->
+                                <p>15/06/2024 14:30</p> 
                             </div>
                         </div>
                         <div class="transaction-values">
@@ -135,7 +135,7 @@
                         </div>
                     </div>
                 </li>
-                 <li class="transaction-withdraw"> <!-- class="transaction-withdraw"-->
+                 <li class="transaction-withdraw"> 
                     <div class="transaction-info">
                         <div class="transaction-header">
                             <span class="material-symbols-outlined transaction-icon withdraw-icon" aria-hidden="true">
@@ -143,7 +143,7 @@
                             </span>
                             <div class="transaction-details">
                                 <p class="transaction-type">Saque</p>
-                                <p>21/01/2026 16:14</p> <!-- class="transaction-date"-->
+                                <p>21/01/2026 16:14</p> 
                             </div>
                         </div>
                         <div class="transaction-values">

@@ -7,7 +7,7 @@ buttons.forEach(button => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const loggedUser = localStorage.getItem("loggedUser");
+const loggedUser = localStorage.getItem("loggedUser");
 
   // Se entrou no dashboard sem login, volta pro index
   if (!loggedUser) {
@@ -67,18 +67,24 @@ if (exitButton) {
     window.location.href = '../../../index.html';
   });
 }
+
 // Botões e input Saques rápidos:
-
 function initQuickWithdraw() {
-    const inputWithdraw = document.querySelector('#withdraw-value');
-    const buttons = document.querySelectorAll('.quick-values button');
+  const buttons = document.querySelectorAll('.quick-values button');
 
-    if (!inputWithdraw || buttons.length === 0) return;
+  if (buttons.length === 0) return;
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            inputWithdraw.value = button.dataset.value;
-        });
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetSelector = button.dataset.target;
+      const value = button.dataset.value;
+
+      const input = document.querySelector(targetSelector);
+      if (!input) return;
+
+      input.value = value;
     });
+  });
 }
 initQuickWithdraw();
+const usuariologado = localStorage.getItem("loggedUser");

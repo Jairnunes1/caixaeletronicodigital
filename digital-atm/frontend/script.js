@@ -1,3 +1,27 @@
+// Alert se login=sucess personalizado
+function showToast(message, type = "success", ms = 2000) {
+  const toast = document.querySelector("#toast");
+
+  const icon =
+    type === "success"
+      ? "check_circle"
+      : "error";
+
+  toast.innerHTML = `
+    <span class="material-symbols-outlined">${icon}</span>
+    <span>${message}</span>
+  `;
+
+  toast.className = `toast show ${type}`;
+
+  setTimeout(() => {
+    toast.className = "toast";
+  }, ms);
+}
+// uso:
+
+
+
 async function login(username, password) {
   const res = await fetch("http://localhost:3000/login", {
     method: "POST",
@@ -17,11 +41,13 @@ document.querySelector("#enviar").addEventListener("click", async () => {
 
   if (result.success) {
     localStorage.setItem("loggedUser", username);
-    (alert("Login bem-sucedido!"));
+    (showToast("Login bem-sucedido!", "success"));
     console.log("Usuário logado:", username);
-    window.location.href = "digital-atm/frontend/app/dashboard.html";
+    setTimeout(() => {
+      window.location.href = "digital-atm/frontend/app/dashboard.html";
+    }, 1500);
   } else {
-    alert(result.message);
+    showToast("Falha no login!", "error");
       console.log("Falha no login:", result.message);
   }
 });

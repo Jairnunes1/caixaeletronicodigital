@@ -26,3 +26,11 @@ body{
 .register.button.sign-up:hover {
     background-color: var(--bg-color1);
 }
+
+
+@media(max-width: 576px) {
+   body {
+      margin: 8px;
+   }
+   
+}
