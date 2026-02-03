@@ -71,6 +71,7 @@ class Handler(BaseHTTPRequestHandler):
 
             users[username]["balance"] += amount
             save_users(users)
+            print(username, users[username]["balance"])
             return self._send_json(200, {"success": True, "balance": users[username]["balance"]})
 
         if path == "/withdraw":

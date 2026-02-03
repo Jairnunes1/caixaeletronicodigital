@@ -1,5 +1,27 @@
 const panels = document.querySelectorAll('.panel');
 const buttons = document.querySelectorAll('nav button');
+const dashboardActions = document.querySelector('.dashboard-actions');
+
+// Alert personalizado
+// function showToast(message, type = "success", ms = 2000) {
+//   const toast = document.querySelector("#toast");
+
+//   const icon =
+//     type === "success"
+//       ? "check_circle"
+//       : "error";
+
+//   toast.innerHTML = `
+//     <span class="material-symbols-outlined">${icon}</span>
+//     <span>${message}</span>
+//   `;
+
+//   toast.className = `toast show ${type}`;
+
+//   setTimeout(() => {
+//     toast.className = "toast";
+//   }, ms);
+// }
 
 // Manipula a navegação entre painéis
 buttons.forEach(button => {
@@ -48,6 +70,7 @@ function panelActive(event) {
 
   button.classList.add('nav-active');
   if (section) section.classList.add('active');
+  
 }
 
 async function getBalance(username) {
@@ -87,4 +110,51 @@ function initQuickWithdraw() {
   });
 }
 initQuickWithdraw();
-const usuariologado = localStorage.getItem("loggedUser");
+
+const inputSaque = document.getElementById("withdraw-value");
+const inputDeposito = document.getElementById("deposit-value");
+const confirmWithdraw = document.querySelector("#confirmWithdraw");
+const confirmDeposit = document.querySelector("#confirmDeposit");
+
+async function sendTransaction(endpoint, inputEl) {
+  const username = localStorage.getItem("loggedUser"); // pega sempre atual
+  const amount = Number(inputEl.value);
+
+  if (!username) {
+    alert("Usuário não autenticado.");
+    return;
+  }
+
+  if (!amount || amount <= 0) {
+    alert("Digite um valor válido.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`http://localhost:3000/${endpoint}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, amount })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      alert(`Saldo atualizado com sucesso! Novo saldo: ${formatBRL(data.balance)}`);
+      inputEl.value = ""; // opcional: limpa o campo
+    } else {
+      alert(`Falha ao atualizar saldo: ${data.message}`);
+    }
+  } catch (error) {
+    console.error("Erro ao conectar ao backend:", error);
+    alert("Não consegui conectar ao backend (porta 3000). Confere se o Python está rodando.");
+  }
+}
+
+confirmWithdraw.addEventListener("click", () => {
+  sendTransaction("withdraw", inputSaque);
+});
+
+confirmDeposit.addEventListener("click", () => {
+  sendTransaction("deposit", inputDeposito);
+});
