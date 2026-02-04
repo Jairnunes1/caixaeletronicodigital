@@ -1,7 +1,19 @@
 const panels = document.querySelectorAll('.panel');
 const buttons = document.querySelectorAll('nav button');
 const dashboardActions = document.querySelector('.dashboard-actions');
+// Previne o reload ao submeter formulários
 
+document.addEventListener("submit", (e) => {
+  console.log("🚨 SUBMIT disparado por:", e.target);
+  e.preventDefault();
+  e.stopPropagation();
+}, true);
+
+// document.addEventListener("click", (e) => {
+//   const btn = e.target.closest("button");
+//   if (!btn) return;
+//   console.log("Clique em botão:", btn.id || btn.textContent.trim(), "type=", btn.getAttribute("type"), "form=", btn.closest("form")?.className);
+// }, true);
 // Alert personalizado
 // function showToast(message, type = "success", ms = 2000) {
 //   const toast = document.querySelector("#toast");
@@ -50,7 +62,9 @@ const loggedUser = localStorage.getItem("loggedUser");
 
     if (data.success) {
       const saldoEl = document.querySelector("#saldo");
-      if (saldoEl) saldoEl.textContent = formatBRL(Number(data.balance));
+      if (saldoEl)
+        saldoEl.textContent = formatBRL(Number(data.balance));
+        addHistoryEntry("Depósito", data.balance, new Date());
     } else {
       alert(data.message);
     }
@@ -77,7 +91,11 @@ async function getBalance(username) {
   const res = await fetch(`http://localhost:3000/balance?username=${encodeURIComponent(username)}`);
   return await res.json();
 }
-
+async function getHistory(username) {
+  const res = await fetch(`http://localhost:3000/history?username=${encodeURIComponent(username)}`);
+  return await res.json();
+}
+getHistory("usuario1").then(data => console.log(data["transactions"]));
 function formatBRL(value) {
   return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
@@ -140,8 +158,16 @@ async function sendTransaction(endpoint, inputEl) {
     const data = await response.json();
 
     if (data.success) {
-      alert(`Saldo atualizado com sucesso! Novo saldo: ${formatBRL(data.balance)}`);
+      // alert(`Saldo atualizado com sucesso! Novo saldo: ${formatBRL(data.balance)}`);
       inputEl.value = ""; // opcional: limpa o campo
+      console.log(data)
+ 
+        addHistoryEntry(
+          endpoint === "deposit" ? "Depósito" : "Saque",
+          amount,
+          data.balance,          // ✅ saldo atualizado vindo do backend
+          new Date()
+        );
     } else {
       alert(`Falha ao atualizar saldo: ${data.message}`);
     }
@@ -158,3 +184,39 @@ confirmWithdraw.addEventListener("click", () => {
 confirmDeposit.addEventListener("click", () => {
   sendTransaction("deposit", inputDeposito);
 });
+
+function addHistoryEntry(type, amount, balance, date) {
+  const empty = document.querySelector(".history-empty"); // (corrigir classe)
+  if (empty) empty.remove();
+
+  const historyList = document.querySelector(".transaction-history");
+  if (!historyList) return;
+
+  const isDeposit = type === "Depósito";
+
+  const entry = document.createElement("li");
+  entry.className = isDeposit ? "transaction-deposit" : "transaction-withdraw";
+
+  entry.innerHTML = `
+    <div class="transaction-info">
+      <div class="transaction-header">
+        <span class="material-symbols-outlined transaction-icon ${isDeposit ? "deposit-icon" : "withdraw-icon"}" aria-hidden="true">
+          ${isDeposit ? "arrow_circle_up" : "arrow_circle_down"}
+        </span>
+        <div class="transaction-details">
+          <p class="transaction-type">${type}</p>
+          <p>${new Date(date).toLocaleString("pt-BR")}</p>
+        </div>
+      </div>
+      <div class="transaction-values">
+        <p class="${isDeposit ? "deposit-amount" : "withdraw-amount"}">
+          ${isDeposit ? "+" : "-"} ${formatBRL(amount)}
+        </p>
+        <p>Saldo: ${formatBRL(balance)}</p>
+      </div>
+    </div>
+  `;
+
+  historyList.prepend(entry);
+}
+

@@ -49,17 +49,17 @@
             <p id="saldo" class="balance-value"><strong>R$ 0.00</strong></p>
         </section>
         <nav class="dashboard-actions">
-            <button data-target="withdraw" class="nav-active">
+            <button type="button" data-target="withdraw" class="nav-active">
                 <span class="material-symbols-outlined interactive-icon" aria-hidden="true">
                     arrow_circle_down
                 </span>Saque
             </button>
-            <button data-target="deposit">
+            <button type="button" data-target="deposit">
                 <span class="material-symbols-outlined interactive-icon" aria-hidden="true">
                     arrow_circle_up
                 </span>Depositar
             </button>
-            <button data-target="history">
+            <button type="button" data-target="history">
                 <span class="material-symbols-outlined interactive-icon" aria-hidden="true">
                     history
                 </span>Histórico
@@ -77,7 +77,7 @@
 
                 <label for="withdraw-value">Valor do saque</label>
                 <input class="input-style" type="number" id="withdraw-value" name="withdraw-value" min="1" step="10" placeholder="0.00" />
-                <button type="submit" id="confirmWithdraw" class="button primary">Confirmar saque</button>
+                <button type="button" id="confirmWithdraw" class="button primary">Confirmar saque</button>
 
                 <fieldset class="quick-values">
                     <legend>Valores rápidos</legend>
@@ -91,17 +91,13 @@
 
             </form>
         </section>
-
-        </div>
-        </section class="panel">
-
         <section id="deposit" class="panel">
             <h2>Realizar Depósito</h2>
             <p class="panel-description">Digite o valor que deseja depositar em sua conta</p>
             <form class="deposit-form">
                 <label for="deposit-value">Valor do depósito</label>
                 <input class="input-style" type="number" id="deposit-value" name="deposit-value" min="1" step="10" placeholder="0.00" />
-                <button type="submit" id="confirmDeposit" class="button primary">Confirmar depósito</button>
+                <button type="button" id="confirmDeposit" class="button primary">Confirmar depósito</button>
             </form>
             <fieldset class="quick-values">
                 <legend>Valores rápidos</legend>
@@ -117,7 +113,7 @@
             <h2>Histórico de Transações</h2>
             <p class="panel-description">Ultimas transações realizadas em sua conta</p>
             <ul class="transaction-history">
-                <li>Nenhuma transação realizada</li>
+                <li class="history-empty">Nenhuma transação realizada</li>
                 <li class="transaction-deposit"> 
                     <div class="transaction-info">
                         <div class="transaction-header">
@@ -148,7 +144,7 @@
                         </div>
                         <div class="transaction-values">
                             <p class="withdraw-amount">- R$ 100.00</p>
-                            <p id="saldo">Saldo: R$ 1000,00</p>
+                            <p class="saldo-history">Saldo: R$ 1000,00</p>
                         </div>
                     </div>
                 </li>

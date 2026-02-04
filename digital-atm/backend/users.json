@@ -1,10 +1,46 @@
 {
   "usuario1": {
     "password": "senha123",
-    "balance": 420.0
+    "balance": 2800.0,
+    "transactions": [
+      {
+        "type": "withdraw",
+        "amount": 100.0,
+        "date": "2024-06-12T10:00:00Z",
+        "balanceAfter": 680.0,
+        "createdAt": 1718039400000
+      },
+      {
+        "type": "withdraw",
+        "amount": 200.0,
+        "balanceAfter": 480.0,
+        "createdAt": 1770227610281
+      },
+      {
+        "type": "deposit",
+        "amount": 2350.0,
+        "balanceAfter": 2830.0,
+        "createdAt": 1770227616842
+      },
+      {
+        "type": "withdraw",
+        "amount": 30.0,
+        "balanceAfter": 2800.0,
+        "createdAt": 1770227638516
+      }
+    ]
   },
   "usuario2": {
     "password": "senha456",
-    "balance": 28590.0
+    "balance": 28490.0,
+    "transactions": [
+      {
+        "type": "deposit",
+        "amount": 5000.0,
+        "date": "2024-06-10T14:30:00Z",
+        "balanceAfter": 28490.0,
+        "createdAt": 1718039400000
+      }
+    ]
   }
 }
