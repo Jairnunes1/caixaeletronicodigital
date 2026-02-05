@@ -82,6 +82,9 @@ main{
     justify-content: center;
     text-align: center;
     padding: 32px 0;
+    overflow-y: auto;
+    max-height: 300px;
+    scroll-behavior: smooth;
 }
 .transaction-deposit{
     display: none;

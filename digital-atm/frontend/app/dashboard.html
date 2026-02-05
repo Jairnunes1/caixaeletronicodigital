@@ -49,7 +49,7 @@
             <p id="saldo" class="balance-value"><strong>R$ 0.00</strong></p>
         </section>
         <nav class="dashboard-actions">
-            <button type="button" data-target="withdraw" class="nav-active">
+            <button type="button" data-target="withdraw" >
                 <span class="material-symbols-outlined interactive-icon" aria-hidden="true">
                     arrow_circle_down
                 </span>Saque
@@ -59,13 +59,13 @@
                     arrow_circle_up
                 </span>Depositar
             </button>
-            <button type="button" data-target="history">
+            <button type="button" data-target="history" class="nav-active">
                 <span class="material-symbols-outlined interactive-icon" aria-hidden="true">
                     history
                 </span>Histórico
             </button>
         </nav>
-        <section id="withdraw" class="panel active">
+        <section id="withdraw" class="panel">
 
             <h2>Realizar Saque</h2>
 
@@ -109,7 +109,7 @@
 
             </fieldset>
         </section>
-        <section id="history" class="panel">
+        <section id="history" class="panel active">
             <h2>Histórico de Transações</h2>
             <p class="panel-description">Ultimas transações realizadas em sua conta</p>
             <ul class="transaction-history">

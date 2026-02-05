@@ -41,11 +41,10 @@ buttons.forEach(button => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
-const loggedUser = localStorage.getItem("loggedUser");
+  const loggedUser = localStorage.getItem("loggedUser");
 
   // Se entrou no dashboard sem login, volta pro index
   if (!loggedUser) {
-    // O index.html está na raiz do projeto; subir 3 níveis até a raiz
     window.location.href = "../../../index.html";
     return;
   }
@@ -56,20 +55,23 @@ const loggedUser = localStorage.getItem("loggedUser");
     userNameElement.textContent = `Bem-vindo, ${loggedUser}`;
   }
 
-  // Busca saldo no backend
+  // Busca saldo e histórico no backend
   try {
     const data = await getBalance(loggedUser);
 
     if (data.success) {
       const saldoEl = document.querySelector("#saldo");
-      if (saldoEl)
-        saldoEl.textContent = formatBRL(Number(data.balance));
-        addHistoryEntry("Depósito", data.balance, new Date());
+      if (saldoEl) saldoEl.textContent = formatBRL(Number(data.balance));
     } else {
       alert(data.message);
     }
+
+    const hist = await getHistory(loggedUser);
+    if (hist && hist.success) {
+      renderHistory(hist.transactions || []);
+    }
   } catch (err) {
-    console.error("Erro ao buscar saldo:", err);
+    console.error("Erro ao buscar dados do backend:", err);
     alert("Não consegui conectar ao backend (porta 3000). Confere se o Python está rodando.");
   }
 });
@@ -95,7 +97,7 @@ async function getHistory(username) {
   const res = await fetch(`http://localhost:3000/history?username=${encodeURIComponent(username)}`);
   return await res.json();
 }
-getHistory("usuario1").then(data => console.log(data["transactions"]));
+
 function formatBRL(value) {
   return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
@@ -177,24 +179,34 @@ async function sendTransaction(endpoint, inputEl) {
   }
 }
 
-confirmWithdraw.addEventListener("click", () => {
-  sendTransaction("withdraw", inputSaque);
-});
+if (confirmWithdraw) {
+  confirmWithdraw.addEventListener("click", () => {
+    sendTransaction("withdraw", inputSaque);
+  });
+}
 
-confirmDeposit.addEventListener("click", () => {
-  sendTransaction("deposit", inputDeposito);
-});
+if (confirmDeposit) {
+  confirmDeposit.addEventListener("click", () => {
+    sendTransaction("deposit", inputDeposito);
+  });
+}
 
 function addHistoryEntry(type, amount, balance, date) {
-  const empty = document.querySelector(".history-empty"); // (corrigir classe)
+  const empty = document.querySelector(".history-empty");
   if (empty) empty.remove();
 
   const historyList = document.querySelector(".transaction-history");
   if (!historyList) return;
+  
+  // Ajustes de estilo para o container do histórico
+  historyList.style.padding = "0px";
+  historyList.style.justifyContent = "normal";
+  historyList.style.textAlign = "start";
 
   const isDeposit = type === "Depósito";
 
   const entry = document.createElement("li");
+  entry.style.display = "block";
   entry.className = isDeposit ? "transaction-deposit" : "transaction-withdraw";
 
   entry.innerHTML = `
@@ -217,6 +229,34 @@ function addHistoryEntry(type, amount, balance, date) {
     </div>
   `;
 
-  historyList.prepend(entry);
+  historyList.appendChild(entry);
 }
 
+function clearHistoryUI() {
+  const historyList = document.querySelector(".transaction-history");
+  if (!historyList) return;
+  historyList.innerHTML = "";
+}
+
+function renderHistory(transactions = []) {
+  clearHistoryUI();
+
+  const historyList = document.querySelector(".transaction-history");
+  if (!historyList) return;
+
+  if (transactions.length === 0) {
+    const li = document.createElement("li");
+    li.className = "history-empty";
+    li.textContent = "Nenhuma transação realizada";
+    historyList.appendChild(li);
+    return;
+  }
+
+  // Mostra mais recente primeiro
+  const ordered = transactions.slice().reverse();
+
+  ordered.forEach(tx => {
+    const label = tx.type === "deposit" ? "Depósito" : "Saque";
+    addHistoryEntry(label, tx.amount, tx.balanceAfter, new Date(tx.createdAt));
+  });
+}

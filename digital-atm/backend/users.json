@@ -1,7 +1,7 @@
 {
   "usuario1": {
     "password": "senha123",
-    "balance": 2750.0,
+    "balance": 4550.0,
     "transactions": [
       {
         "type": "withdraw",
@@ -45,12 +45,60 @@
         "amount": 100.0,
         "balanceAfter": 2750.0,
         "createdAt": 1770291148798
+      },
+      {
+        "type": "withdraw",
+        "amount": 50.0,
+        "balanceAfter": 2700.0,
+        "createdAt": 1770295651241
+      },
+      {
+        "type": "withdraw",
+        "amount": 200.0,
+        "balanceAfter": 2500.0,
+        "createdAt": 1770295656253
+      },
+      {
+        "type": "withdraw",
+        "amount": 50.0,
+        "balanceAfter": 2450.0,
+        "createdAt": 1770295712282
+      },
+      {
+        "type": "deposit",
+        "amount": 50.0,
+        "balanceAfter": 2500.0,
+        "createdAt": 1770296066002
+      },
+      {
+        "type": "deposit",
+        "amount": 100.0,
+        "balanceAfter": 2600.0,
+        "createdAt": 1770296532412
+      },
+      {
+        "type": "deposit",
+        "amount": 500.0,
+        "balanceAfter": 3100.0,
+        "createdAt": 1770296929080
+      },
+      {
+        "type": "withdraw",
+        "amount": 50.0,
+        "balanceAfter": 3050.0,
+        "createdAt": 1770296952360
+      },
+      {
+        "type": "deposit",
+        "amount": 1500.0,
+        "balanceAfter": 4550.0,
+        "createdAt": 1770297261516
       }
     ]
   },
   "usuario2": {
     "password": "senha456",
-    "balance": 28490.0,
+    "balance": 28570.0,
     "transactions": [
       {
         "type": "deposit",
@@ -70,6 +118,66 @@
         "amount": 200.0,
         "balanceAfter": 28490.0,
         "createdAt": 1770291344131
+      },
+      {
+        "type": "deposit",
+        "amount": 100.0,
+        "balanceAfter": 28590.0,
+        "createdAt": 1770291538725
+      },
+      {
+        "type": "deposit",
+        "amount": 50.0,
+        "balanceAfter": 28640.0,
+        "createdAt": 1770291543401
+      },
+      {
+        "type": "withdraw",
+        "amount": 50.0,
+        "balanceAfter": 28590.0,
+        "createdAt": 1770291553986
+      },
+      {
+        "type": "deposit",
+        "amount": 50.0,
+        "balanceAfter": 28640.0,
+        "createdAt": 1770291704542
+      },
+      {
+        "type": "deposit",
+        "amount": 100.0,
+        "balanceAfter": 28740.0,
+        "createdAt": 1770291821304
+      },
+      {
+        "type": "withdraw",
+        "amount": 50.0,
+        "balanceAfter": 28690.0,
+        "createdAt": 1770291821627
+      },
+      {
+        "type": "withdraw",
+        "amount": 20.0,
+        "balanceAfter": 28670.0,
+        "createdAt": 1770291926248
+      },
+      {
+        "type": "withdraw",
+        "amount": 50.0,
+        "balanceAfter": 28620.0,
+        "createdAt": 1770295443738
+      },
+      {
+        "type": "withdraw",
+        "amount": 100.0,
+        "balanceAfter": 28520.0,
+        "createdAt": 1770295447125
+      },
+      {
+        "type": "deposit",
+        "amount": 50.0,
+        "balanceAfter": 28570.0,
+        "createdAt": 1770298640647
       }
     ]
   }
