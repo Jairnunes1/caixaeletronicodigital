@@ -65,6 +65,46 @@ class Handler(BaseHTTPRequestHandler):
 
             balance = users[username].get("balance", 0.0)
             return self._send_json(200, {"success": True, "message": "Login OK", "balance": balance})
+        
+        if path == "/register":
+            username = data.get("username")
+            password = data.get("password")
+            amount_raw = data.get("balance", 0)
+
+            if not username or not password:
+                return self._send_json(400, {"success": False, "message": "Faltou username ou password."})
+
+            if username in users:
+                return self._send_json(409, {"success": False, "message": "Usuário já existe."})
+
+            if len(password) < 6:
+                return self._send_json(400, {"success": False, "message": "Senha precisa ter no mínimo 6 caracteres."})
+
+            try:
+                balance = float(amount_raw)
+            except (TypeError, ValueError):
+                return self._send_json(400, {"success": False, "message": "Saldo inicial inválido."})
+
+            if balance < 0:
+                return self._send_json(400, {"success": False, "message": "Saldo inicial não pode ser negativo."})
+
+            users[username] = {
+                "password": password,
+                "balance": balance,
+                "transactions": []
+            }
+
+            # opcional: se quiser registrar saldo inicial como depósito
+            if balance > 0:
+                users[username]["transactions"].append({
+                    "type": "deposit",
+                    "amount": balance,
+                    "balanceAfter": balance,
+                    "createdAt": int(time.time() * 1000)
+                })
+
+            save_users(users)
+            return self._send_json(201, {"success": True, "message": "Usuário criado com sucesso."})
 
         if path == "/deposit":
             username = data.get("username")

@@ -4,36 +4,10 @@ const dashboardActions = document.querySelector('.dashboard-actions');
 // Previne o reload ao submeter formulários
 
 document.addEventListener("submit", (e) => {
-  console.log("🚨 SUBMIT disparado por:", e.target);
+  console.log("SUBMIT disparado por:", e.target);
   e.preventDefault();
   e.stopPropagation();
 }, true);
-
-// document.addEventListener("click", (e) => {
-//   const btn = e.target.closest("button");
-//   if (!btn) return;
-//   console.log("Clique em botão:", btn.id || btn.textContent.trim(), "type=", btn.getAttribute("type"), "form=", btn.closest("form")?.className);
-// }, true);
-// Alert personalizado
-// function showToast(message, type = "success", ms = 2000) {
-//   const toast = document.querySelector("#toast");
-
-//   const icon =
-//     type === "success"
-//       ? "check_circle"
-//       : "error";
-
-//   toast.innerHTML = `
-//     <span class="material-symbols-outlined">${icon}</span>
-//     <span>${message}</span>
-//   `;
-
-//   toast.className = `toast show ${type}`;
-
-//   setTimeout(() => {
-//     toast.className = "toast";
-//   }, ms);
-// }
 
 // Manipula a navegação entre painéis
 buttons.forEach(button => {
@@ -45,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Se entrou no dashboard sem login, volta pro index
   if (!loggedUser) {
-    window.location.href = "../../../index.html";
+    window.location.href = `${location.origin}/index.html`;
     return;
   }
 
@@ -86,13 +60,13 @@ function panelActive(event) {
 
   button.classList.add('nav-active');
   if (section) section.classList.add('active');
-  
 }
 
 async function getBalance(username) {
   const res = await fetch(`http://localhost:3000/balance?username=${encodeURIComponent(username)}`);
   return await res.json();
 }
+
 async function getHistory(username) {
   const res = await fetch(`http://localhost:3000/history?username=${encodeURIComponent(username)}`);
   return await res.json();
@@ -107,7 +81,7 @@ const exitButton = document.querySelector('.button.exit') || document.querySelec
 if (exitButton) {
   exitButton.addEventListener('click', () => {
     localStorage.removeItem('loggedUser');
-    window.location.href = '../../../index.html';
+    window.location.href = `${location.origin}/index.html`;
   });
 }
 
@@ -138,14 +112,14 @@ const confirmDeposit = document.querySelector("#confirmDeposit");
 
 async function sendTransaction(endpoint, inputEl) {
   const username = localStorage.getItem("loggedUser"); // pega sempre atual
-  const amount = Number(inputEl.value);
+  const amount = Number(inputEl?.value);
 
   if (!username) {
     alert("Usuário não autenticado.");
     return;
   }
 
-  if (!amount || amount <= 0) {
+  if (!Number.isFinite(amount) || amount <= 0) {
     alert("Digite um valor válido.");
     return;
   }
@@ -157,19 +131,22 @@ async function sendTransaction(endpoint, inputEl) {
       body: JSON.stringify({ username, amount })
     });
 
-    const data = await response.json();
+    const data = await response.json(); // data definido aqui
 
     if (data.success) {
-      // alert(`Saldo atualizado com sucesso! Novo saldo: ${formatBRL(data.balance)}`);
-      inputEl.value = ""; // opcional: limpa o campo
-      console.log(data)
- 
-        addHistoryEntry(
-          endpoint === "deposit" ? "Depósito" : "Saque",
-          amount,
-          data.balance,          // ✅ saldo atualizado vindo do backend
-          new Date()
-        );
+      //atualiza saldo no topo com o saldo real do backend
+      const saldoEl = document.querySelector("#saldo");
+      if (saldoEl) saldoEl.textContent = formatBRL(Number(data.balance));
+
+      // limpa input após transação
+      if (inputEl) inputEl.value = "";
+
+      addHistoryEntry(
+        endpoint === "deposit" ? "Depósito" : "Saque",
+        amount,
+        Number(data.balance),
+        new Date()
+      );
     } else {
       alert(`Falha ao atualizar saldo: ${data.message}`);
     }
@@ -197,7 +174,7 @@ function addHistoryEntry(type, amount, balance, date) {
 
   const historyList = document.querySelector(".transaction-history");
   if (!historyList) return;
-  
+
   // Ajustes de estilo para o container do histórico
   historyList.style.padding = "0px";
   historyList.style.justifyContent = "normal";

@@ -1,7 +1,7 @@
 {
   "usuario1": {
     "password": "senha123",
-    "balance": 4550.0,
+    "balance": 4500.0,
     "transactions": [
       {
         "type": "withdraw",
@@ -93,6 +93,12 @@
         "amount": 1500.0,
         "balanceAfter": 4550.0,
         "createdAt": 1770297261516
+      },
+      {
+        "type": "withdraw",
+        "amount": 50.0,
+        "balanceAfter": 4500.0,
+        "createdAt": 1770298734408
       }
     ]
   },
