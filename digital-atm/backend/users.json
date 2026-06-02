@@ -1,7 +1,7 @@
 {
   "usuario1": {
     "password": "senha123",
-    "balance": 4500.0,
+    "balance": 4480.0,
     "transactions": [
       {
         "type": "withdraw",
@@ -99,6 +99,24 @@
         "amount": 50.0,
         "balanceAfter": 4500.0,
         "createdAt": 1770298734408
+      },
+      {
+        "type": "withdraw",
+        "amount": 50.0,
+        "balanceAfter": 4450.0,
+        "createdAt": 1772664733434
+      },
+      {
+        "type": "withdraw",
+        "amount": 20.0,
+        "balanceAfter": 4430.0,
+        "createdAt": 1780400837202
+      },
+      {
+        "type": "deposit",
+        "amount": 50.0,
+        "balanceAfter": 4480.0,
+        "createdAt": 1780400842488
       }
     ]
   },
@@ -184,6 +202,42 @@
         "amount": 50.0,
         "balanceAfter": 28570.0,
         "createdAt": 1770298640647
+      }
+    ]
+  },
+  "jairnunes": {
+    "password": "senha123",
+    "balance": 1130.0,
+    "transactions": [
+      {
+        "type": "deposit",
+        "amount": 1200.0,
+        "balanceAfter": 1200.0,
+        "createdAt": 1772666737088
+      },
+      {
+        "type": "withdraw",
+        "amount": 20.0,
+        "balanceAfter": 1180.0,
+        "createdAt": 1772666743509
+      },
+      {
+        "type": "withdraw",
+        "amount": 50.0,
+        "balanceAfter": 1130.0,
+        "createdAt": 1772666750253
+      }
+    ]
+  },
+  "Rosa": {
+    "password": "123123",
+    "balance": 1000.0,
+    "transactions": [
+      {
+        "type": "deposit",
+        "amount": 1000.0,
+        "balanceAfter": 1000.0,
+        "createdAt": 1772667017038
       }
     ]
   }

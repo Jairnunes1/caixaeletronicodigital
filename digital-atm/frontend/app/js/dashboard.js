@@ -13,7 +13,9 @@ document.addEventListener("submit", (e) => {
 buttons.forEach(button => {
   button.addEventListener('click', panelActive);
 });
+let usuariologado = localStorage.getItem("loggedUser") || "Usuário";
 
+console.log(typeof usuariologado)
 document.addEventListener("DOMContentLoaded", async () => {
   const loggedUser = localStorage.getItem("loggedUser");
 
