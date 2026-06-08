@@ -38,14 +38,31 @@ Aplicação full stack que simula um sistema de caixa eletrônico, permitindo qu
 
 ```
 📁 projeto/
-├── main.py
-├── users.json
-├── register.html
-├── register.js
-├── login.css
-├── register.css
-├── base.css
-└── auth.css
+├── digital-atm
+  └── backend
+    ├── main.py
+    ├── users.json
+  └── frontend
+    └── app
+      └── js
+        ├── dashboard.js
+      └── style
+        ├── base.css
+        ├── components.css
+        ├── layout.css
+      ├── dasboard.html
+    └── imgs
+    └── styles
+        ├── auth.css
+        ├── base.css
+        ├── login.css
+        ├── register.css
+    ├── register.html
+    ├── register.js
+    ├── script.js
+  ├── README.md
+  ├── index.html
+
 ```
 
 ---
